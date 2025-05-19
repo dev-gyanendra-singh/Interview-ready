@@ -1,10 +1,11 @@
 package LLD.ParkingLot;
 
+import LLD.ParkingLot.Charges.HourlyBasis;
 import LLD.ParkingLot.VehicleFactory.*;
 
 public class ParkingLotDemo {
         public static void main(String[] args) {
-            ParkingFloorManager lot = new ParkingFloorManager();
+            ParkingFloorManager lot = new ParkingFloorManager(new HourlyBasis(20));
             lot.addFloor(2, 2);  // 2 car spots, 2 bike spots
             lot.addFloor(1, 3);  // 1 car spot, 3 bike spots
 
@@ -16,7 +17,7 @@ public class ParkingLotDemo {
             lot.parkVehicle(bike1);
             lot.parkVehicle(car2);
 
-            lot.unParkVehicle("KA01AB1234");
+            System.out.println("Pay the charges: " + lot.unParkVehicle("KA01AB1234"));
             lot.parkVehicle(VehicleFactory.createVehicle("KA01AB0001", VehicleType.CAR));
         }
 }
