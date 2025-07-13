@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.*;
-import java.util.function.Function;
 
 public class TwitterService {
     private final Map<Integer, User> userMap;
